@@ -25,9 +25,10 @@ ul {
   margin: auto;
 }
 .container2 {
-  background-color: #c5d5f4;
+  background-color: #002B64;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   padding: 1rem 0;
+  color: white;
   top: 0;
   z-index: 1000;
 }
@@ -44,10 +45,11 @@ ul {
 
 /* Header */
 .main-header {
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   padding: 1rem 0;
   position: sticky;
+
   top: 0;
   z-index: 1000;
 }
@@ -59,7 +61,7 @@ ul {
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #0074d9;
+  color: #002B64;
 }
 .nav-links {
   display: flex;
@@ -78,7 +80,7 @@ ul {
 
 .nav-links a:hover {
   transform: scale(1.25); 
-  color: #0074d9;
+  color: #002B64;
 }
 
 
@@ -123,7 +125,7 @@ ul {
 
 .btn-primary {
   display: inline-block;
-  background-color: #0074d9;
+  background-color: #002B64;
   color: white;
   padding: 0.4rem 1rem;        /* Smaller padding */
   font-size: 0.85rem;          /* Slightly smaller text */
@@ -135,7 +137,7 @@ ul {
 }
 
 .btn-primary:hover {
-  background-color: #005fa3;
+  background-color: #002B64;
 }
 
 /* Features Section */
@@ -155,10 +157,11 @@ ul {
   justify-content: center;
 }
 .feature-card {
-  background-color: #c5d5f4;
+  background-color: #002B64;
   padding: 2rem;
   text-align: center;
   border-radius: 10px;
+  color: white;
   flex: 1 1 250px;
   max-width: 300px;
   transition: transform 0.3s ease-in-out; /* Add the transition here */
@@ -178,7 +181,7 @@ ul {
 
 /* Footer */
 .main-footer {
-  background-color: #003366;
+  background-color: #002B64;
   color: white;
   padding: 2rem 0;
 }

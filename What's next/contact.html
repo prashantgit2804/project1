@@ -9,24 +9,26 @@
 
   <style>
     :root {
-      --dark-blue: #002B64;
-      --cyan: #0CC0DF;
+      --dark-blue: #003366;
+      --light-blue: #e6f7ff;
+   
       --yellow: #FFDE59;
-      --gradient: linear-gradient(135deg, #0CC0DF, #FFDE59);
+      --white: #ffffff;
+     
     }
 
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: #f9f9f9;
+      background: #f5f9fc;
       color: #333;
     }
 
-    /* Header */
     .main-header {
-      background-color: var(--dark-blue);
+      background: var(--dark-blue);
       color: white;
       padding: 20px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
     .nav-container {
@@ -53,17 +55,16 @@
       color: white;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
     }
 
     .nav-links a:hover, .nav-links .active {
       color: var(--yellow);
     }
 
-    /* Contact Section */
     .contact-section {
       padding: 60px 20px;
-      background-color: #ffffff;
+      background: var(--white);
+      background: linear-gradient(to right, #ffffff, #f1faff);
     }
 
     .contact-container {
@@ -91,6 +92,10 @@
     .contact-form, .contact-details {
       flex: 1;
       min-width: 300px;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .contact-form label {
@@ -103,21 +108,23 @@
     .contact-form textarea {
       width: 100%;
       padding: 12px;
-      border: 1px solid #ccc;
+      border: 1px solid #ccddee;
       border-radius: 6px;
       font-size: 16px;
+      background-color: #f9f9f9;
       transition: all 0.3s;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
       border-color: var(--cyan);
-      box-shadow: 0 0 5px rgba(12, 192, 223, 0.4);
+      background: var(--light-blue);
+      box-shadow: 0 0 6px rgba(12, 192, 223, 0.3);
     }
 
     .btn-primary {
       background: var(--gradient);
-      color: #002B64;
+      color: var(--dark-blue);
       font-weight: 600;
       border: none;
       padding: 12px 20px;
@@ -129,7 +136,8 @@
     }
 
     .btn-primary:hover {
-      opacity: 0.9;
+      transform: scale(1.03);
+      opacity: 0.95;
     }
 
     .contact-details h3 {
@@ -140,7 +148,7 @@
 
     .contact-details p {
       font-size: 16px;
-      margin: 10px 0;
+      margin: 12px 0;
     }
 
     .contact-details i {
@@ -148,8 +156,9 @@
       color: var(--cyan);
     }
 
-    .social-links {
-      margin-top: 20px;
+    .social-links h4 {
+      margin-top: 25px;
+      color: var(--dark-blue);
     }
 
     .social-links a {
@@ -164,9 +173,8 @@
       transform: scale(1.2);
     }
 
-    /* Footer */
     .main-footer {
-      background-color: var(--dark-blue);
+      background: var(--dark-blue);
       color: white;
       padding: 40px 20px;
     }
@@ -216,7 +224,6 @@
       color: #ccc;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       .contact-grid {
         flex-direction: column;
@@ -252,9 +259,8 @@
 <!-- Contact Section -->
 <section class="contact-section">
   <div class="container contact-container">
-    <h2 class="section-title">Get in Touch</h2>
+    <h2 class="section-title" style="background-color: black;">Get in Touch</h2>
     <div class="contact-grid">
-
       <!-- Contact Form -->
       <div class="contact-form">
         <form id="contactForm" action="#" method="POST">
@@ -293,7 +299,7 @@
 </section>
 
 <!-- Footer -->
-<footer class="main-footer">
+<footer class="main-footer" style="background-color: black;">
   <div class="container footer-content">
     <div class="social-icons">
       <h3>Follow Us</h3>
@@ -323,16 +329,12 @@
   </div>
 </footer>
 
-<!-- JavaScript for animations -->
+<!-- JS -->
 <script>
   const inputs = document.querySelectorAll('input, textarea');
   inputs.forEach(input => {
-    input.addEventListener('focus', () => {
-      input.style.backgroundColor = '#f0fcff';
-    });
-    input.addEventListener('blur', () => {
-      input.style.backgroundColor = 'white';
-    });
+    input.addEventListener('focus', () => input.style.backgroundColor = '#e6faff');
+    input.addEventListener('blur', () => input.style.backgroundColor = '#f9f9f9');
   });
 
   document.getElementById("contactForm").addEventListener("submit", function(e) {
