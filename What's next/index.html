@@ -8,35 +8,270 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <style>
+
+    body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.main-header {
+  background-color: #002b64;
+  color: white;
+  padding: 20px 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  background: #f2f6ff;
+}
+
+.hero-slide {
+  display: none;
+  padding: 60px 20px;
+  align-items: center;
+  justify-content: space-between;
+  animation: fade 1s ease-in-out;
+}
+
+.hero-slide.active {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1 1 50%;
+  max-width: 600px;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn-primary {
+  background-color: #002b64;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 43, 100, 0.7);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 12px;
+  z-index: 100;
+  border-radius: 50%;
+}
+
+.slide-btn.prev {
+  left: 10px;
+}
+
+.slide-btn.next {
+  right: 10px;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+    margin-top: 10px;
+    padding: 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+}
+  </style>
 </head>
 <body>
   <!-- Header -->
-  <header class="main-header">
-    <div class="container nav-container">
-      <h1 class="logo">What's Next ?</h1>
-      <nav class="nav">
-        <ul class="nav-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/about.html">About us</a></li>
-          <li><a href="/What's next/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+   <header class="main-header">
+  <div class="container nav-container">
+    <h1 class="logo">What's Next ?</h1>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
   
   <!-- Hero Section -->
-   <section class="hero">
-    <div class="container hero-content">
-        <div class="hero-text">
-        <h2>Discover Your Ideal Career Path</h2>
-        <p>Explore career options, take expert-guided psychometric tests, and get matched with the perfect field.</p>
-        <a href="#" class="btn-primary">Start Now</a>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career Guide - Home</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+
+  
+  <!-- Hero Section with Carousel -->
+  <section class="hero">
+    <div class="hero-slider">
+      <div class="hero-slide active">
+        <div class="container hero-content">
+          <div class="hero-text">
+            <h2>Discover Your Ideal Career Path</h2>
+            <p>Explore career options, take expert-guided psychometric tests, and get matched with the perfect field.</p>
+            <a href="#" class="btn-primary">Start Now</a>
+          </div>
+          <div class="hero-image">
+            <img src="templates/images/career.svg" alt="Career guidance" />
+          </div>
         </div>
+      </div>
+
+      <div class="hero-slide">
+        <div class="container hero-content">
+          <div class="hero-text">
+            <h2>Choose the Right Stream After 10th</h2>
+            <p>Use scientific stream selector tests to decide your academic direction confidently.</p>
+            <a href="#" class="btn-primary">Take the Test</a>
+          </div>
+          <div class="hero-image">
+            <img src="templates/images/stream.jpg" alt="Stream Selector" />
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide">
+        <div class="container hero-content">
+          <div class="hero-text">
+            <h2>Talk to Our Career Experts</h2>
+            <p>Get 1-on-1 guidance from industry professionals with decades of experience.</p>
+            <a href="#" class="btn-primary">Book a Session</a>
+          </div>
+          <div class="hero-image">
+            <img src="templates/images/expert1.png" alt="Expert Guidance" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <button class="slide-btn prev">&#10094;</button>
+      <button class="slide-btn next">&#10095;</button>
     </div>
-    <div class="hero-image">
-        <img src="templates/images/career.svg" alt="Career guidance" />
-        </div>
-    </section>
+  </section>
+
+  <!-- Other sections (features, programs, experts, footer) remain unchanged -->
+  <!-- You can paste your Features, Programs, Experts and Footer code here -->
+
+  <script>
+    const slides = document.querySelectorAll('.hero-slide');
+    const prevBtn = document.querySelector('.slide-btn.prev');
+    const nextBtn = document.querySelector('.slide-btn.next');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Optional auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
+
+   const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+  </script>
+</body>
+</html>
+
 
   <!-- Features Section -->
     <section class="features">

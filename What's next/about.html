@@ -237,6 +237,41 @@
       opacity: 1;
       transform: none;
     }
+    .nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-wrap: wrap;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    display: none;
+    margin-top: 10px;
+    padding: 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -245,15 +280,19 @@
 <header class="main-header">
   <div class="container nav-container">
     <h1 class="logo">What's Next ?</h1>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
     <nav class="nav">
       <ul class="nav-links">
         <li><a href="/index.html">Home</a></li>
-        <li><a href="/about.html" class="active">About Us</a></li>
-        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/about.html">About us</a></li>
+        <li><a href="/What's next/contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
+
 
 <!-- About Section -->
 <section class="about-section">
@@ -368,6 +407,13 @@
   }, appearOptions);
 
   faders.forEach(fader => appearOnScroll.observe(fader));
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
 </script>
 
 </body>
